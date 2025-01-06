@@ -67,6 +67,7 @@ import default_values;
 import special_function;
 import internal_types;
 import data_type;
+import truncate;
 
 import logical_type;
 

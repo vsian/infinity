@@ -44,51 +44,51 @@ void RegisterSqrtFunction(const UniquePtr<Catalog> &catalog_ptr) {
     SharedPtr<ScalarFunctionSet> function_set_ptr = MakeShared<ScalarFunctionSet>(func_name);
 
     ScalarFunction truncate_float_int8(func_name,
-                              {DataType(LogicalType::Float), DataType(LogicalType::kTinyInt)},
+                              {DataType(LogicalType::kFloat), DataType(LogicalType::kTinyInt)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Float, TinyIntT, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<float, TinyIntT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_float_int8);
 
     ScalarFunction truncate_float_int16(func_name,
-                              {DataType(LogicalType::Float), DataType(LogicalType::kSmallInt)},
+                              {DataType(LogicalType::kFloat), DataType(LogicalType::kSmallInt)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Float, SmallIntT, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<float, SmallIntT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_float_int16);
 
     ScalarFunction truncate_float_int32(func_name,
-                              {DataType(LogicalType::Float), DataType(LogicalType::kInteger)},
+                              {DataType(LogicalType::kFloat), DataType(LogicalType::kInteger)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Float, Integer, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<float, IntegerT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_float_int32);
 
     ScalarFunction truncate_float_int64(func_name,
-                              {DataType(LogicalType::Float), DataType(LogicalType::kBigInt)},
+                              {DataType(LogicalType::kFloat), DataType(LogicalType::kBigInt)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Float, BigInt, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<float, BigIntT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_float_int64);
 
     ScalarFunction truncate_double_int8(func_name,
                               {DataType(LogicalType::kDouble), DataType(LogicalType::kTinyInt)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Double,  TinyIntT, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<double,  TinyIntT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_double_int8);
 
     ScalarFunction truncate_double_int16(func_name,
                               {DataType(LogicalType::kDouble), DataType(LogicalType::kSmallInt)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Double,  SmallInt, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<double,  SmallIntT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_double_int16);
 
     ScalarFunction truncate_double_int32(func_name,
                               {DataType(LogicalType::kDouble), DataType(LogicalType::kInteger)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Double, Integer, Double, TruncateFunction>);
-    function_set_ptr->AddFunction(runcate_double_int32);
+                              &ScalarFunction::BinaryFunction<double, IntegerT, double, TruncateFunction>);
+    function_set_ptr->AddFunction(truncate_double_int32);
 
     ScalarFunction truncate_double_int64(func_name,
                               {DataType(LogicalType::kDouble), DataType(LogicalType::kBigInt)},
                               DataType(LogicalType::kDouble),
-                              &ScalarFunction::BinaryFunction<Double, BigInt, Double, TruncateFunction>);
+                              &ScalarFunction::BinaryFunction<double, BigIntT, double, TruncateFunction>);
     function_set_ptr->AddFunction(truncate_double_int64);
 
 

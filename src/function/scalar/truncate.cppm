@@ -6,7 +6,7 @@ import stl;
 
 namespace infinity {
 
-class catalog;
+class Catalog;
 export void RegisterTruncateFunction(const UniquePtr<Catalog> &catalog_ptr);
 
 }
