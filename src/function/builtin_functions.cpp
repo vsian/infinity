@@ -118,6 +118,7 @@ void BuiltinFunctions::RegisterScalarFunction() {
     RegisterIsnanFunction(catalog_ptr_);
     RegisterIsinfFunction(catalog_ptr_);
     RegisterIsfiniteFunction(catalog_ptr_);
+    RegisterTruncateFunction(catalog_ptr_);
 
     // register comparison operator
     RegisterEqualsFunction(catalog_ptr_);

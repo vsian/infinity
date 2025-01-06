@@ -1023,3 +1023,6 @@ class TestInfinity:
 
         res = db_obj.drop_table("test_select_round" + suffix)
         assert res.error_code == ErrorCode.OK
+
+    def test_select_truncate(self):
+        pass
